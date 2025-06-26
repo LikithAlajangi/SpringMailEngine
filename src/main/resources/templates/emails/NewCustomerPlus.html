@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:text-align="http://www.w3.org/1999/xhtml"
+      xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my website</title>
+</head>
+<body style="background-color:lightblue"; text-align:center; color:lightpurple;>
+<div>Hi <span th:text="${name}" th:remove="tag"></span></div>
+<p>Checkout our education content</p>
+<ul th:each="offer : ${offerings}">
+  <li>
+    <span th:text="${offer.name}" th:remove="tag"></span>
+    <a th:href="@{${offer.link}}">Check it out now</a>
+  </li>
+</ul>
+
+<p>
+  Thanks for joining,<br/>
+  <em>Likith Alajangi</em>
+</p>
+</body>
+</html>
